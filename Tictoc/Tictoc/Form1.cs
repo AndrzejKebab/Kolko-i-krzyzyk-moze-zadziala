@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Tictoc
+namespace tictoc
 {
     enum CurrentPlayer
     {
@@ -22,18 +22,13 @@ namespace Tictoc
         {
             InitializeComponent();
             currentPlayer = CurrentPlayer.Cross;
-            changeLabel();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            ChangeLabel();
         }
 
         private void Mark(object sender, EventArgs e)
         {
             Button senderButton = (Button)sender;
-            if(currentPlayer == CurrentPlayer.Cross)
+            if (currentPlayer == CurrentPlayer.Cross)
             {
                 senderButton.Text = "O";
                 currentPlayer = CurrentPlayer.Circle;
@@ -44,15 +39,15 @@ namespace Tictoc
                 currentPlayer = CurrentPlayer.Cross;
             }
         }
-        public void changeLabel()
+        public void ChangeLabel()
         {
-            if(currentPlayer == CurrentPlayer.Cross)
+            if (currentPlayer == CurrentPlayer.Cross)
             {
-                player.Text = "Krzyżyk";
+                Player.Text = "Krzyżyk";
             }
             else
             {
-                player.Text = "Kółko";
+                Player.Text = "Kółko";
             }
         }
     }
